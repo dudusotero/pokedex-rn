@@ -5,7 +5,7 @@ import axios from 'axios'
 
 import { orderFormatter } from '~/helpers'
 import {
-  Container, Item, Thumbnail, Info, Name, AdditionalInfo,
+  Container, Item, Thumbnail, Info, Name, AdditionalInfo, TypeBadge,
 } from './styles'
 
 function ListItem({ item }) {
@@ -33,6 +33,9 @@ function ListItem({ item }) {
             <Name>{info.name}</Name>
             <AdditionalInfo>{orderFormatter(info.order)}</AdditionalInfo>
           </Info>
+          {info.types.map(itemType => (
+            <TypeBadge key={Math.random()} type={itemType.type.name} />
+          ))}
         </Item>
       )}
     </Container>

@@ -3,6 +3,7 @@ package com.pokedex;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.thebylito.navigationbarcolor.NavigationBarColorPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new NavigationBarColorPackage(),
             new VectorIconsPackage(),
             new LinearGradientPackage(),
             new RNGestureHandlerPackage()

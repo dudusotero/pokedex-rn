@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native'
 
 export const Title = styled.Text`
   font-size: 20px;
+  margin-bottom: 12px;
   align-self: center;
 `
 

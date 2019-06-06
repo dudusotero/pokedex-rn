@@ -5532,6 +5532,11 @@ react-native-linear-gradient@^2.5.4:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.4.tgz#dce133526f5a5510a639af94544f1ed0c984bd1e"
   integrity sha512-FF1NhlerA4uBiS0gFIHa4FBp8/aftv4vPj14Y47lGNkYjSI94tnI6oYO3EfUxXjEyCUPiOVNKZOB9kScyjc5Ew==
 
+react-native-navigation-bar-color@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-navigation-bar-color/-/react-native-navigation-bar-color-0.1.0.tgz#358be3eb8630dbaf5993ec9cf07b279590984f2e"
+  integrity sha512-Hymvfg40MH4vYgXZ5QgCk9i6BqcaD9inFiBGSj3Gobk0bq7O2G/uccs0+Dmlpe12RfC+R+XX6yvW7NTwOppQrQ==
+
 react-native-safe-area-view@^0.14.1:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.4.tgz#1647fa74fd452cb8cee4f47bd08de3829451bf5d"
