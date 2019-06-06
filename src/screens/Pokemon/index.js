@@ -6,15 +6,26 @@ import { Container } from '~/components'
 import { Title, List } from './styles'
 
 export default function Pokemon() {
+  const [next, setNext] = useState(undefined)
   const [pokemon, setPokemon] = useState([])
 
-  async function fetchData() {
+  async function load() {
     const res = await api.get('pokemon')
+
     setPokemon(res.data.results)
+    setNext(res.data.next)
+  }
+
+  async function loadMore() {
+    if (!next) return
+
+    const res = await api.get(next)
+    setPokemon(prev => [...prev, ...res.data.results])
+    setNext(res.data.next)
   }
 
   useEffect(() => {
-    fetchData()
+    load()
   }, [])
 
   return (
@@ -24,6 +35,8 @@ export default function Pokemon() {
         data={pokemon}
         keyExtractor={item => item.name}
         renderItem={({ item }) => <ListItem item={item} />}
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.2}
       />
     </Container>
   )

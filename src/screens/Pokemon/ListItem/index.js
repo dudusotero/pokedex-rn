@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { shape, string } from 'prop-types'
-import {
-  View, ActivityIndicator, Text, Image,
-} from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import axios from 'axios'
+
+import { orderFormatter } from '~/helpers'
+import {
+  Container, Item, Thumbnail, Info, Name, AdditionalInfo,
+} from './styles'
 
 function ListItem({ item }) {
   const [loading, setLoading] = useState(true)
@@ -20,16 +23,19 @@ function ListItem({ item }) {
   }, [])
 
   return (
-    <View>
+    <Container>
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <View>
-          <Image source={{ uri: info.sprites.front_default }} />
-          <Text>{info.name}</Text>
-        </View>
+        <Item>
+          <Thumbnail source={{ uri: info.sprites.front_default }} />
+          <Info>
+            <Name>{info.name}</Name>
+            <AdditionalInfo>{orderFormatter(info.order)}</AdditionalInfo>
+          </Info>
+        </Item>
       )}
-    </View>
+    </Container>
   )
 }
 
