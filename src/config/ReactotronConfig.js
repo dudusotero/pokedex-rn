@@ -1,11 +1,14 @@
-import Reactotron from 'reactotron-react-native';
+import Reactotron from 'reactotron-react-native'
 
 if (__DEV__) {
-  const tron = Reactotron.configure()
+  const tron = Reactotron.configure({
+    name: 'Pokedex App',
+  })
     .useReactNative()
-    .connect();
+    .connect()
 
-  tron.clear();
+  tron.clear()
 
-  console.tron = tron;
+  // eslint-disable-next-line no-console
+  console.tron = tron
 }
